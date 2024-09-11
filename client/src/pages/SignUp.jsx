@@ -7,7 +7,9 @@ export default function SignUp() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value, });
+    setFormData({ 
+      ...formData, 
+      [e.target.id]: e.target.value, });
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -59,14 +61,14 @@ export default function SignUp() {
           id='password'
           onChange={handleChange} />
 
-        <button disabled={loading} type="submit"
+        <button disabled={loading}
           className='bg-slate-600 hover:bg-slate-700 text-white p-3
          rounded-lg uppercase'>{loading ? 'Loading...' : 'Sign Up'} </button>
       </form>
       <div className='flex gap-2 mt-5'>
         <p>Have an account?</p>
         <Link to={"/sign-in"}>
-          <span className='text-blue-700'>Sign in</span>
+          <span className='text-blue-700'>Sign In</span>
         </Link>
       </div>
       {error && <p className='text-red-500 mt-5'>{error}</p>}
